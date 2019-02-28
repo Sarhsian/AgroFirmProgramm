@@ -32,13 +32,19 @@ namespace AgroFirmProgramm
 
         private void btnClients_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = context.Clients.ToList();
 
+            dataGridView1.DataSource = context.Clients.ToList();
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = context.Users.ToList();
+            var Users = context.Users.ToList();
+            dataGridView1.DataSource = Users;
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

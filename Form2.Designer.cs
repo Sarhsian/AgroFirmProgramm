@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,41 +99,42 @@
             this.dataGridView1.Size = new System.Drawing.Size(1235, 681);
             this.dataGridView1.TabIndex = 5;
             // 
-            // button5
+            // btnCreate
             // 
-            this.button5.Location = new System.Drawing.Point(1253, 51);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(167, 80);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Create";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(1253, 51);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(167, 80);
+            this.btnCreate.TabIndex = 6;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // button6
+            // btnUpdate
             // 
-            this.button6.Location = new System.Drawing.Point(1253, 137);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(167, 80);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Update";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(1253, 137);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(167, 80);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnDelete
             // 
-            this.button8.Location = new System.Drawing.Point(1253, 223);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(167, 80);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Delete";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(1253, 223);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(167, 80);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 830);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
@@ -156,8 +157,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
