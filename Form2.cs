@@ -26,8 +26,22 @@ namespace AgroFirmProgramm
 
         private void btnWorkers_Click(object sender, EventArgs e)
         {
-           
-            dataGridView1.DataSource = context.Workers.ToList();
+
+            var Workers = context.Workers.Select(t => new
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Surname = t.Surname,
+                Middlename = t.MiddleName,
+                RoleId = t.RoleId,
+                DateBidrth = t.DateBirdth,
+                StartDate = t.StartDate,
+                EndDate = t.EndDate,
+                PhoneNumber = t.PhoneNumber,
+                Addres = t.Addres,
+                Wage = t.Wage
+            });
+            dataGridView1.DataSource = Workers.ToList();
         }
 
         private void btnClients_Click(object sender, EventArgs e)
@@ -38,13 +52,31 @@ namespace AgroFirmProgramm
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            var Users = context.Users.ToList();
-            dataGridView1.DataSource = Users;
+            var Users = context.Users.Select(t => new
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Surname = t.Surname,
+                Middlename = t.MiddleName,
+                RoleId = t.RoleId,
+                Login = t.Login,
+                Password = t.Password,
+                DateBidrth = t.DateBirdth,
+                StartDate = t.StartDate,
+                EndDate = t.EndDate
+            });
+            dataGridView1.DataSource = Users.ToList();            
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+           
+            
+            this.Hide();
+            AddPeople addPeople = new AddPeople();
+            addPeople.ShowDialog();
+            this.Close();
+            
         }
     }
 }

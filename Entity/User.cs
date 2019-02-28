@@ -32,7 +32,6 @@ namespace AgroFirmProgramm.Entity
         
         public DateTime? EndDate { get; set; }
         
-
         public virtual Role RoleOf { get; set; }
     }
 }

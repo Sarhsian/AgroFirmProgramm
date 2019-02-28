@@ -53,17 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddUser.cs">
+    <Compile Include="AddPeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
-      <DependentUpon>AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChoosePeople.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChoosePeople.Designer.cs">
-      <DependentUpon>ChoosePeople.cs</DependentUpon>
+    <Compile Include="AddPeople.Designer.cs">
+      <DependentUpon>AddPeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Client.cs" />
     <Compile Include="Entity\Context.cs" />
@@ -103,11 +97,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddUser.resx">
-      <DependentUpon>AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChoosePeople.resx">
-      <DependentUpon>ChoosePeople.cs</DependentUpon>
+    <EmbeddedResource Include="AddPeople.resx">
+      <DependentUpon>AddPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

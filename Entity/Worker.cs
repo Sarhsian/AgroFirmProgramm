@@ -34,7 +34,6 @@ namespace AgroFirmProgramm.Entity
         [Required]
         public int Wage { get; set; }
         
-
         public virtual Role RoleOf { get; set; }
     }
 }
