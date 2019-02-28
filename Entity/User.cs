@@ -29,8 +29,8 @@ namespace AgroFirmProgramm.Entity
         public DateTime DateBirdth { get; set; }
         [Required]
         public DateTime StartDate { get; set; }
-
-        public DateTime EndDate { get; set; }
+        
+        public DateTime? EndDate { get; set; }
         
 
         public virtual Role RoleOf { get; set; }

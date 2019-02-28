@@ -26,7 +26,7 @@ namespace AgroFirmProgramm.Entity
         [Required]
         public DateTime StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         [Required]
         public int PhoneNumber { get; set; }
         [Required]
