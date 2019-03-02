@@ -59,6 +59,7 @@
             this.radioButtonClient = new System.Windows.Forms.RadioButton();
             this.radioButtonWorker = new System.Windows.Forms.RadioButton();
             this.radioButtonUser = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -266,7 +267,7 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Location = new System.Drawing.Point(352, 162);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 272);
+            this.groupBox5.Size = new System.Drawing.Size(200, 166);
             this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
             // 
@@ -357,11 +358,22 @@
             this.radioButtonUser.UseVisualStyleBackColor = true;
             this.radioButtonUser.CheckedChanged += new System.EventHandler(this.radioButtonUser_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(361, 334);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 104);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -426,5 +438,6 @@
         private System.Windows.Forms.RadioButton radioButtonUser;
         private System.Windows.Forms.RadioButton radioButtonWorker;
         private System.Windows.Forms.RadioButton radioButtonClient;
+        private System.Windows.Forms.Button button1;
     }
 }

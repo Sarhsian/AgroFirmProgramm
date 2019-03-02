@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgroFirmProgramm.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace AgroFirmProgramm
 {
     public partial class AddPeople : Form
     {
+        private Context context = new Context();
         public AddPeople()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace AgroFirmProgramm
             txtLogin.ReadOnly = false;
             txtPassword.ReadOnly = false;
             txtWage.ReadOnly = false;
+            
 
         }
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -46,12 +49,63 @@ namespace AgroFirmProgramm
         {
             Accessibility();
             txtLogin.ReadOnly = true;
-            txtLogin.ReadOnly = true;
+            txtPassword.ReadOnly = true;          
         }
 
         private void radioButtonUser_CheckedChanged(object sender, EventArgs e)
         {
-
+            Accessibility();
+            txtWage.ReadOnly = true;
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(radioButtonWorker.Checked == true)
+            {
+                Worker Workers = new Worker
+                {                       
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    RoleId = Int32.Parse(txtRoleid.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text),
+                    StartDate = DateTime.Parse(txtStartDate.Text),
+                    PhoneNumber = Int32.Parse(txtPhonenum.Text),
+                    Addres = txtAddres.Text,
+                    Wage = Int32.Parse(txtWage.Text)
+                };
+                context.Workers.Add(Workers);
+                context.SaveChanges();
+            }
+            if(radioButtonClient.Checked == true)
+            {
+                Client Clients = new Client
+                {
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    Addres = txtAddres.Text,
+                    PhoneNumber = Int32.Parse(txtPhonenum.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text)
+                };
+                context.Clients.Add(Clients);
+            }
+            if(radioButtonUser.Checked == true)
+            {
+                User Users = new User
+                {
+                    Login = txtLogin.Text,
+                    Password = txtPassword.Text,
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    RoleId = Int32.Parse(txtRoleid.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text),
+                    StartDate = DateTime.Parse(txtStartDate.Text)
+                };
+                context.Users.Add(Users);
+            }
+            context.SaveChanges();
         }
     }
 }

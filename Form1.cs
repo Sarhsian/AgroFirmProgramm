@@ -48,12 +48,23 @@ namespace AgroFirmProgramm
             }
             if (Passed == true)
             {
-                MessageBox.Show(Users[UserInd].Name + " " + Users[UserInd].MiddleName + ", you entered the system!");
+                if (Users[UserInd].RoleId == 1)
+                {
+                    MessageBox.Show(Users[UserInd].Name + " " + Users[UserInd].MiddleName + ", you entered the system!");
 
-                Form2 MenuWind = new Form2();
-                this.Hide();
-                MenuWind.ShowDialog();
-                this.Close();
+                    Form2 MenuWind = new Form2();
+                    this.Hide();
+                    MenuWind.ShowDialog();
+                    this.Close();
+                }else
+                {
+                    MessageBox.Show(Users[UserInd].Name + " " + Users[UserInd].MiddleName + ", you entered the system!");
+
+                    ManagerMenu managerMenu = new ManagerMenu();
+                    this.Hide();
+                    managerMenu.ShowDialog();
+                    this.Close();
+                }
             }
             else
             {

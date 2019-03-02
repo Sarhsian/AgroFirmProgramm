@@ -17,13 +17,17 @@ namespace AgroFirmProgramm
         public Form2()
         {
             InitializeComponent();
+            radioButtonClient.Checked = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Accessibility()
         {
-            this.Close();
+            txtStartDate.ReadOnly = false;
+            txtRoleid.ReadOnly = false;
+            txtLogin.ReadOnly = false;
+            txtPassword.ReadOnly = false;
+            txtWage.ReadOnly = false;
         }
-
         private void btnWorkers_Click(object sender, EventArgs e)
         {
 
@@ -70,13 +74,77 @@ namespace AgroFirmProgramm
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-           
             
-            this.Hide();
-            AddPeople addPeople = new AddPeople();
-            addPeople.ShowDialog();
-            this.Close();
-            
+
+            if (radioButtonWorker.Checked == true)
+            {
+                Worker Workers = new Worker
+                {
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    RoleId = Int32.Parse(txtRoleid.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text),
+                    StartDate = DateTime.Parse(txtStartDate.Text),
+                    PhoneNumber = Int32.Parse(txtPhonenum.Text),
+                    Addres = txtAddres.Text,
+                    Wage = Int32.Parse(txtWage.Text)
+                };
+                context.Workers.Add(Workers);
+                context.SaveChanges();
+            }
+            if (radioButtonClient.Checked == true)
+            {
+                Client Clients = new Client
+                {
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    Addres = txtAddres.Text,
+                    PhoneNumber = Int32.Parse(txtPhonenum.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text)
+                };
+                context.Clients.Add(Clients);
+            }
+            if (radioButtonUser.Checked == true)
+            {
+                User Users = new User
+                {
+                    Login = txtLogin.Text,
+                    Password = txtPassword.Text,
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    MiddleName = txtMiddleName.Text,
+                    RoleId = Int32.Parse(txtRoleid.Text),
+                    DateBirdth = DateTime.Parse(txtDBirdth.Text),
+                    StartDate = DateTime.Parse(txtStartDate.Text)
+                };
+                context.Users.Add(Users);
+            }
+            context.SaveChanges();
+        }
+
+        private void radioButtonClient_CheckedChanged(object sender, EventArgs e)
+        {
+            Accessibility();
+            txtStartDate.ReadOnly = true;
+            txtRoleid.ReadOnly = true;
+            txtLogin.ReadOnly = true;
+            txtPassword.ReadOnly = true;
+            txtWage.ReadOnly = true;
+        }
+
+        private void radioButtonWorker_CheckedChanged(object sender, EventArgs e)
+        {
+            Accessibility();
+            txtLogin.ReadOnly = true;
+            txtPassword.ReadOnly = true;
+        }
+
+        private void radioButtonUser_CheckedChanged(object sender, EventArgs e)
+        {
+            Accessibility();
+            txtWage.ReadOnly = true;
         }
     }
 }
