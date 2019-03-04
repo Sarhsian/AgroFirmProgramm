@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Entity\Client.cs" />
     <Compile Include="Entity\Context.cs" />
+    <Compile Include="Entity\Deal.cs" />
     <Compile Include="Entity\Groats.cs" />
     <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\User.cs" />
@@ -99,6 +100,14 @@
     <Compile Include="Migrations\201903040826329_AddedGroats.Designer.cs">
       <DependentUpon>201903040826329_AddedGroats.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903040900385_addedDeals.cs" />
+    <Compile Include="Migrations\201903040900385_addedDeals.Designer.cs">
+      <DependentUpon>201903040900385_addedDeals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903040902585_someChanges.cs" />
+    <Compile Include="Migrations\201903040902585_someChanges.Designer.cs">
+      <DependentUpon>201903040902585_someChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903040826329_AddedGroats.resx">
       <DependentUpon>201903040826329_AddedGroats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903040900385_addedDeals.resx">
+      <DependentUpon>201903040900385_addedDeals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903040902585_someChanges.resx">
+      <DependentUpon>201903040902585_someChanges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
