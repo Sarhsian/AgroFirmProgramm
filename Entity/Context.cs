@@ -18,6 +18,7 @@ namespace AgroFirmProgramm.Entity
         public DbSet<User> Users { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Groats> Groats { get; set; }
 
 
     }

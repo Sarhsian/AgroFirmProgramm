@@ -14,9 +14,9 @@ namespace AgroFirmProgramm
     public partial class Form1 : Form
     {
 
-        public Context context = new Context();        
-        
-       
+        public Context context = new Context();
+        public User enteredUser { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +43,7 @@ namespace AgroFirmProgramm
                     CheckPas = Users[i].Password;
                     UserInd = i;
                     Passed = true;
+                    enteredUser = context.Users.FirstOrDefault(u => u.Id == i);
                     break;
                 }
             }
@@ -65,11 +66,13 @@ namespace AgroFirmProgramm
                     managerMenu.ShowDialog();
                     this.Close();
                 }
+               
             }
             else
             {
                 MessageBox.Show("Wrong Login or Password!");
             }
+
             
         }
     }

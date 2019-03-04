@@ -18,6 +18,8 @@ namespace AgroFirmProgramm
         {
             InitializeComponent();
             radioButtonClient.Checked = true;
+            radioButtonWorker.Enabled = false;
+            radioButtonUser.Enabled = false;
             
         }
 
